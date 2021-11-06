@@ -1,9 +1,9 @@
-import './App.css';
+import Entry from './pages/Entry';
 
 function App() {
   return (
     <div className='App'>
-      <h2>crm</h2>
+      <Entry />
     </div>
   );
 }

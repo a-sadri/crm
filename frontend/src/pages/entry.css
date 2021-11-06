@@ -1,0 +1,19 @@
+.entry-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.form-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-login-card {
+  width: 30vw;
+}
+
+a {
+  text-decoration: none !important;
+}
