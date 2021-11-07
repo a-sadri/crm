@@ -6,9 +6,7 @@ const Entry = () => {
   const [email, setEmail] = useState('');
 
   const onChangeHandler = (e) => {
-    const { name, value } = e.target;
-
-    setEmail(value);
+    setEmail(e.target.value);
   };
 
   const submitHandler = (e) => {

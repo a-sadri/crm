@@ -19,3 +19,7 @@ footer {
   padding: 1rem;
   color: white;
 }
+
+.btn-info {
+  color: white !important;
+}
