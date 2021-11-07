@@ -1,13 +1,16 @@
 import Layout from './components/layout/Layout';
-import Entry from './pages/Entry';
+import Login from './pages/Login';
 import ResetPassword from './pages/ResetPassword';
 import './app.css';
+import Dashboard from './pages/Dashboard';
 function App() {
   return (
     <div className='App'>
-      {/* <Entry /> */}
+      {/* <Login /> */}
       {/* <ResetPassword /> */}
-      <Layout />
+      <Layout>
+        <Dashboard />
+      </Layout>
     </div>
   );
 }
