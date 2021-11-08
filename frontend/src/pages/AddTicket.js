@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Container, Row, Col, Form, Card, Button } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import PageBreadcrumb from '../components/PageBreadcrumb';
 
 const initialForm = {
@@ -11,17 +11,20 @@ const initialForm = {
 const AddTicket = () => {
   const [formData, setFormData] = useState(initialForm);
 
+  useEffect(() => {}, [formData]);
+
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
 
     setFormData({
-      ...initialForm,
+      ...formData,
       [name]: value,
     });
   };
 
-  const submitHandler = () => {
-    console.log('submit');
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log(formData);
   };
 
   return (
@@ -31,9 +34,9 @@ const AddTicket = () => {
           <PageBreadcrumb page='New Ticket' />
         </Col>
       </Row>
-      <Row>
+      <Row className='mt-5'>
+        <h1 className='text-info'>Add New Ticket</h1>
         <Col>
-          {/* <Card> */}
           <Form autoComplete='off' onSubmit={submitHandler}>
             <Form.Group as={Row} className='my-3'>
               <Form.Label column sm={3}>
@@ -43,6 +46,7 @@ const AddTicket = () => {
                 <Form.Control
                   onChange={onChangeHandler}
                   type='text'
+                  minLength='5'
                   name='subject'
                   value={formData.subject}
                   placeholder='Subject'
@@ -90,7 +94,6 @@ const AddTicket = () => {
               </Col>
             </Form.Group>
           </Form>
-          {/* </Card> */}
         </Col>
       </Row>
     </Container>
